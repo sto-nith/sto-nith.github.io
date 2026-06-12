@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#2a2426"/>
+      <stop offset="100%" stop-color="#3a2e1e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#c89b3c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c89b3c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#c89b3c" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- flowing data streams -->
+  <g opacity="0.5" stroke="#c89b3c" fill="none" stroke-width="1.5">
+    <path d="M -50 320 Q 300 200 600 340 T 1250 280" opacity="0.7"/>
+    <path d="M -50 380 Q 320 280 620 400 T 1250 360" opacity="0.5"/>
+    <path d="M -50 440 Q 340 360 640 460 T 1250 420" opacity="0.4"/>
+    <path d="M -50 500 Q 360 440 660 520 T 1250 480" opacity="0.3"/>
+  </g>
+
+  <!-- nodes along the flow -->
+  <g fill="#c89b3c">
+    <circle cx="180" cy="295" r="4"/>
+    <circle cx="420" cy="262" r="3"/>
+    <circle cx="700" cy="335" r="5"/>
+    <circle cx="950" cy="308" r="3"/>
+    <circle cx="280" cy="385" r="3"/>
+    <circle cx="820" cy="395" r="4"/>
+  </g>
+
+  <!-- title -->
+  <text
+    x="80" y="200"
+    font-family="Lora, Georgia, serif"
+    font-size="72"
+    font-weight="600"
+    fill="#faf7f2"
+    letter-spacing="-2"
+  >Hello, World</text>
+
+  <text
+    x="80" y="245"
+    font-family="Inter, Helvetica, sans-serif"
+    font-size="22"
+    font-weight="400"
+    fill="#c89b3c"
+    letter-spacing="3"
+  >SAURABH-PANT.COM · 2026</text>
+
+  <!-- subtle corner mark -->
+  <text
+    x="1120" y="600"
+    font-family="Inter, Helvetica, sans-serif"
+    font-size="14"
+    fill="#5b5b5b"
+    text-anchor="end"
+    letter-spacing="2"
+  >SP</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#3a3a3a"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c89b3c"/>
+      <stop offset="100%" stop-color="#b8862e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#bg)"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="url(#ring)" stroke-width="2" opacity="0.6"/>
+  <text
+    x="100" y="100"
+    font-family="Lora, Georgia, serif"
+    font-size="92"
+    font-weight="600"
+    fill="#faf7f2"
+    text-anchor="middle"
+    dominant-baseline="central"
+    letter-spacing="-2"
+  >SP</text>
+</svg>

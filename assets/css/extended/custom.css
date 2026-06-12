@@ -1,0 +1,337 @@
+/* ─────────────────────────────────────────────────────────
+   saurabh-pant.com — editorial overrides on top of PaperMod
+   Loaded automatically because PaperMod imports
+   assets/css/extended/*.css after its own styles.
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  --gap: 24px;
+  --content-gap: 20px;
+  --nav-width: 1100px;
+  --main-width: 760px;
+  --header-height: 60px;
+  --footer-height: 60px;
+  --radius: 8px;
+
+  /* Light mode — warm paper background, deep ink text */
+  --theme: #faf7f2;
+  --entry: #ffffff;
+  --primary: #1a1a1a;
+  --secondary: #5b5b5b;
+  --tertiary: #e9e3d8;
+  --content: #2a2a2a;
+  --code-block-bg: #1a1a1a;
+  --code-bg: #f0ebe0;
+  --border: #e3dccd;
+
+  /* The accent — warm amber */
+  --accent: #b8862e;
+  --accent-soft: #c89b3c;
+}
+
+.dark {
+  --theme: #161616;
+  --entry: #1f1f1f;
+  --primary: #ededed;
+  --secondary: #a8a8a8;
+  --tertiary: #2a2a2a;
+  --content: #d6d6d6;
+  --code-block-bg: #0d0d0d;
+  --code-bg: #2a2a2a;
+  --border: #2e2e2e;
+
+  --accent: #d8a64a;
+  --accent-soft: #e6b766;
+}
+
+/* Typography ─────────────────────────────────────────────── */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.entry-header h1,
+.entry-header h2,
+.first-entry .entry-header h1,
+.profile .profile_inner h1 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.post-title {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.profile .profile_inner h1 {
+  font-size: 2.6rem;
+  margin-top: 16px;
+}
+
+.profile .profile_inner .post-description {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--secondary);
+  max-width: 540px;
+  margin: 14px auto 28px;
+  line-height: 1.55;
+}
+
+/* Profile avatar — soft border ring + subtle shadow */
+.profile img {
+  border-radius: 50%;
+  border: 4px solid var(--entry);
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.dark .profile img {
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile buttons — pill shaped, accent on hover */
+.profile .buttons .button {
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  transition: all 0.18s ease;
+}
+
+.profile .buttons .button:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Header ─────────────────────────────────────────────────── */
+
+/* Bind header to current theme via the same --theme variable
+   PaperMod itself uses, so it auto-follows light/dark.
+   (Earlier hard-coded rgba caused a bright bar in dark mode.) */
+.header {
+  background: var(--theme);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo a {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.menu a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.menu a:hover::after,
+.menu .active::after {
+  width: 60%;
+}
+
+/* Post cards on listing pages ────────────────────────────── */
+
+.post-entry {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin: 20px 0;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-entry:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-soft);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.06),
+    0 0 0 1px var(--accent-soft);
+}
+
+.dark .post-entry:hover {
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 0 0 1px var(--accent-soft);
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.post-entry .entry-content {
+  font-size: 0.96rem;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.post-entry .entry-footer {
+  font-size: 0.82rem;
+  color: var(--secondary);
+  margin-top: 14px;
+  letter-spacing: 0.01em;
+}
+
+/* Cover images on cards */
+.entry-cover {
+  margin: -28px -30px 20px -30px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+
+.entry-cover img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.post-entry:hover .entry-cover img {
+  transform: scale(1.03);
+}
+
+/* Single post page ───────────────────────────────────────── */
+
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-content p {
+  margin: 1.2em 0;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--code-bg);
+  padding: 14px 22px;
+  font-style: italic;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.08rem;
+  color: var(--content);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.post-content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* Tags as pills */
+.post-tags a,
+ul.terms-tags li a {
+  background: var(--tertiary);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.post-tags a:hover,
+ul.terms-tags li a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Footer ─────────────────────────────────────────────────── */
+
+.footer {
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--secondary);
+  padding: 28px 0;
+}
+
+.footer a {
+  color: var(--accent);
+}
+
+/* Subtle entrance animation on page load */
+.main {
+  animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Hero polish ─────────────────────────────────────────
+   Body gets a faint dot-grid so the page never looks empty
+   regardless of viewport height.
+   ───────────────────────────────────────────────────────── */
+body {
+  background-image:
+    radial-gradient(circle, rgba(184, 134, 46, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: 0 0;
+}
+
+.dark body,
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(circle, rgba(216, 166, 74, 0.07) 1px, transparent 1px);
+}
+
+/* Pull the profile up — no more dead-center-on-tall-monitor */
+.profile {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 80px);
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+}
+
+.profile .buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+}
